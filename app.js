@@ -70,7 +70,7 @@ entradaDeDados.question('Digite o nome do aluno: ', function (nome) {
                         if(media < 50){
                             statusAluno = 'REPROVADO'
 
-                        }else if(media == 50 && media  < 70){
+                        }else if(media >= 50 && media  < 70){
                             statusAluno = 'RECUPERAÇÃO'
                         }else{
                             statusAluno = 'APROVADO'
