@@ -36,6 +36,16 @@ entradaDeDados.question('Digite o nome do aluno: ', function (nome) {
                     Ou - OR, ||
                     Não - NOT, !
                     */
+                           /*
+                            Conversões de tipos de dados
+                                parseInt() -> Permite converter uma String para número INTEIRO
+                                parseFloat() -> Permite converter uma String para número DECIMAL
+                                Number() -> Permite converter uma String para NUMERO (INTEIRO OU DECIMAL)
+                                String() -> Permite converter um conteúdo para STRING
+                                Boolean() -> Permite converter um conteúdo para BOOLEANO
+                                typeof() -> Permite verificar o tipo de dados da variável
+                        
+                        */ 
                     
                     //Validação de entrada vazia  
                     if (nomeAluno == '' || nota1 == '' || nota2 == '' || nota3 == '' || nota4 == '') {
@@ -52,38 +62,28 @@ entradaDeDados.question('Digite o nome do aluno: ', function (nome) {
                         console.log('ERRO: ')
 
                     }else{
-                        /*
-                            Conversões de tipos de dados
-                                parseInt() -> Permite converter uma String para número INTEIRO
-                                parseFloat() -> Permite converter uma String para número DECIMAL
-                                Number() -> Permite converter uma String para NUMERO (INTEIRO OU DECIMAL)
-                                String() -> Permite converter um conteúdo para STRING
-                                Boolean() -> Permite converter um conteúdo para BOOLEANO
-                                typeof() -> Permite verificar o tipo de dados da variável
-                        
-                        */ 
+                        let statusAluno  
+                        // Calculo da Média
                         let media = (Number(nota1) + Number(nota2) + Number(nota3) + Number(nota4)) / 4 
-
+                        
+                        // Validação do Status de aprovação do aluno 
                         if(media < 50){
-                            console.log(`O aluno(a) ${nomeAluno} ficou com a média ${media.toFixed(2)}`)
-                            console.log('O aluno está REPROVADO')
-    
-                        }else if(media == 50 || media  < 70){
-                            console.log(`O aluno(a) ${nomeAluno} ficou com a média ${media.toFixed(2)}`)
-                            console.log('O aluno está em RECUPERAÇÃO')
-    
+                            statusAluno = 'REPROVADO'
+
+                        }else if(media == 50 && media  < 70){
+                            statusAluno = 'RECUPERAÇÃO'
                         }else{
-                            console.log(`O aluno(a) ${nomeAluno} ficou com a média ${media.toFixed(2)}`)
-                            console.log('O Aluno está Aprovado')
+                            statusAluno = 'APROVADO'
+                        
     
                         }
 
-
+                        //Saída do boletim do aluno
+                        console.log(`O aluno(a) ${nomeAluno} \n Média final: ${media.toFixed(2)} \n Status do aluno(a): ${statusAluno}`)
 
                     }
 
                     
-
                 }) //Fecha nota4
             }) //Fecha nota3
         }) // Fecha nota2
