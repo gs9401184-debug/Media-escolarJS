@@ -27,10 +27,13 @@ entradaDeDados.question('Digite o nome do(a) cliente: ', function(nome){
             entradaDeDados.question('Digite o tempo de pagamento (em mês ou ano): ', function(tempo){
                 let tempoPagamento = tempo
 
+                if(nomeCliente == '' || produto == '' || taxaJuros == '' || tempoPagamento == ''){
+
+                }else{
+
+                }
 
 
-
-                
             })
 
         })
